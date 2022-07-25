@@ -83,3 +83,8 @@ INSERT INTO Emp_Payroll([Name] ,[Salary] ,[StartDate] ,[Department] ,[Gender] )
 Values ('Terissa', 135000,'12-12-2020' ,'Marketing' , 'Female');
 
 SELECT * FROM Emp_Payroll
+
+Update Emp_Payroll Set BasicPay = 5000 , Deductions = 1000 ,TaxablePay = 500, IncomeTax = 1000, NetPay = 20000 Where EmpId = 11; 
+Update Emp_Payroll Set PhoneNumber = 8565456740 Where EmpId = 11 ;
+
+SELECT * FROM Emp_Payroll
