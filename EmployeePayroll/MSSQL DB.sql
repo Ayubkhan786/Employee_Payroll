@@ -29,8 +29,9 @@ WHERE Name = 'Ayub'
 SELECT Salary FROM Emp_Payroll
 WHERE StartDate BETWEEN CAST('2015/10/12'AS date) AND ('2019/11/10');
 
+ALTER TABLE Emp_Payroll ALTER COLUMN Salary BigInt;
 
-ALTER TABLE Emp_Payroll ADD Gender varchar(6);
+ALTER TABLE Emp_Payroll ALTER COLUMN Gender varchar(20);
 
 UPDATE Emp_payroll set Gender ='Male' 
 Where Name = 'Ayub' or Name='Vijay' or Name='Abhishek';
@@ -60,7 +61,7 @@ SELECT COUNT (Salary)  AS TotalCountOfFemale FROM Emp_Payroll Where Gender ='Fem
 
 
 ALTER TABLE Emp_Payroll 
-ADD PhoneNumber float;
+ALTER COLUMN PhoneNumber BigInt;
 
 ALTER TABLE Emp_Payroll 
 ADD Address varchar(300) ;
@@ -71,7 +72,7 @@ ADD Department varchar(250) NOT NULL ;
 SELECT * FROM Emp_Payroll
 
 UPDATE Emp_Payroll Set PhoneNumber = 8445412318 , Address = 'India' , Department = 'Engineering' where EmpId = 1 ;
-UPDATE Emp_Payroll Set PhoneNumber = 8897561234 , Address = 'India' , Department = 'Research' where EmpId = 2;
+UPDATE Emp_Payroll Set PhoneNumber = 8897561234 , Address = 'India' , Department = 'Research' where EmpId = 2 OR EmpId=8 OR EmpId=9 OR EmpId=10;
 
 
 ALTER TABLE Emp_Payroll ADD BasicPay BIgInt , Deductions BigInt , TaxablePay BigInt ,IncomeTax BigInt ,NetPay BigInt;
@@ -84,7 +85,10 @@ Values ('Terissa', 135000,'12-12-2020' ,'Marketing' , 'Female');
 
 SELECT * FROM Emp_Payroll
 
-Update Emp_Payroll Set BasicPay = 5000 , Deductions = 1000 ,TaxablePay = 500, IncomeTax = 1000, NetPay = 20000 Where EmpId = 11; 
-Update Emp_Payroll Set PhoneNumber = 8565456740 Where EmpId = 11 ;
+UPDATE Emp_Payroll Set BasicPay = 5000 , Deductions = 1000 ,TaxablePay = 500, IncomeTax = 1000, NetPay = 20000 Where EmpId = 11; 
+UPDATE Emp_Payroll Set PhoneNumber = 8565456740 Where EmpId = 11 ;
 
 SELECT * FROM Emp_Payroll
+
+UPDATE Emp_Payroll Set BasicPay = 50000 , Deductions = 100 ,TaxablePay = 500, IncomeTax = 100, NetPay = 2000 Where EmpId = 2 or EmpId=3; 
+UPDATE Emp_Payroll Set BasicPay = 2000 , Deductions = 1000 ,TaxablePay = 5000, IncomeTax = 500, NetPay = 20000 Where EmpId = 8 OR EmpId=9 OR EmpId=10; 
